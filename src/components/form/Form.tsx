@@ -4,14 +4,13 @@ import ContactInfo from "./ContactInfo";
 
 interface FormProps {
 	cv: CV;
+	updateCV: (newCV: CV) => void;
 }
 
 const Form: FunctionComponent<FormProps> = (props: FormProps) => {
-    
-
 	return (
 		<div className="form">
-			<ContactInfo cv={props.cv} onChange={this.onChange} />
+			<ContactInfo cv={props.cv} updateCV={props.updateCV} />
 		</div>
 	);
 };
