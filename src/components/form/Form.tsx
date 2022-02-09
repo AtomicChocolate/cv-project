@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { CV } from "../utils/CV";
 import ContactInfo from "./ContactInfo";
+import Education from "./Education";
 
 interface FormProps {
 	cv: CV;
@@ -11,6 +12,7 @@ const Form: FunctionComponent<FormProps> = (props: FormProps) => {
 	return (
 		<div className="form">
 			<ContactInfo cv={props.cv} updateCV={props.updateCV} />
+			<Education cv={props.cv} updateCV={props.updateCV} />
 		</div>
 	);
 };

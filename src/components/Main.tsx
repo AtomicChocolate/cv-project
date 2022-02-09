@@ -13,15 +13,6 @@ const Main: FunctionComponent<MainProps> = () => {
 		setState(newCV);
 	}
 
-	// useEffect(() => {
-	// 	return () => {
-	// 		<main>
-	// 			<Form cv={cv} updateCV={updateCV} />
-	// 			<Preview cv={cv} />
-	// 		</main>;
-	// 	};
-	// });
-
 	return (
 		<main>
 			<Form cv={cv} updateCV={updateCV} />

@@ -85,7 +85,7 @@ const ContactInfo: FunctionComponent<ContactInfoProps> = (
 				name="firstName"
 				onChange={handleFirstChange}
 				placeholder="First name"
-				value={props.cv.contactInfo.firstName}
+				value={state.firstName}
 			/>
 			<input
 				type="text"
