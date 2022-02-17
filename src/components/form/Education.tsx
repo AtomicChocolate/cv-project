@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from "react";
-import { CV, EducationType } from "../utils/CV";
+import { CV, emptyCV, EducationType } from "../utils/CV";
 import dateFormat from "dateformat";
 
 interface EducationProps {
@@ -84,14 +84,14 @@ const Education: FunctionComponent<EducationProps> = (
 				name="universityName"
 				onChange={handleNameChange}
 				placeholder="University name"
-				value={props.cv.education.universityName}
+				value={state.universityName}
 			/>
 			<input
 				type="text"
 				name="degreeMajor"
 				onChange={handleDegreeChange}
-				placeholder="Degree and major"
-				value={props.cv.education.degreeMajor}
+				placeholder={emptyCV.education.degreeMajor}
+				value={state.degreeMajor}
 			/>
 			<input
 				type="date"
@@ -105,21 +105,21 @@ const Education: FunctionComponent<EducationProps> = (
 				name="location"
 				onChange={handleLocationChange}
 				placeholder="Location"
-				value={props.cv.education.location}
+				value={state.location}
 			/>
 			<input
 				type="text"
 				name="honors"
 				onChange={handleHonorsChange}
-				placeholder="Honors"
-				value={props.cv.education.honors}
+				placeholder={emptyCV.education.honors}
+				value={state.honors}
 			/>
 			<input
 				type="text"
 				name="extracurriculars"
 				onChange={handleExtrasChange}
-				placeholder="Extracurriculars"
-				value={props.cv.education.extracurriculars}
+				placeholder={emptyCV.education.extracurriculars}
+				value={state.extracurriculars}
 			/>
 		</section>
 	);

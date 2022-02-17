@@ -85,42 +85,42 @@ const ContactInfo: FunctionComponent<ContactInfoProps> = (
 				name="firstName"
 				onChange={handleFirstChange}
 				placeholder="First name"
-				value={props.cv.contactInfo.firstName}
+				value={state.firstName}
 			/>
 			<input
 				type="text"
 				name="lastName"
 				onChange={handleLastChange}
 				placeholder="Last name"
-				value={props.cv.contactInfo.lastName}
+				value={state.lastName}
 			/>
 			<input
 				type="text"
 				name="profession"
 				onChange={handleProfessionChange}
 				placeholder="Profession"
-				value={props.cv.contactInfo.profession}
+				value={state.profession}
 			/>
 			<input
 				type="text"
 				name="location"
 				onChange={handleLocationChange}
 				placeholder="Location"
-				value={props.cv.contactInfo.location}
+				value={state.location}
 			/>
 			<input
 				type="text"
 				name="phoneNumber"
 				onChange={handlePhoneChange}
 				placeholder="Phone number"
-				value={props.cv.contactInfo.phoneNumber}
+				value={state.phoneNumber}
 			/>
 			<input
 				type="text"
 				name="emailAddress"
 				onChange={handleEmailChange}
 				placeholder="Email address"
-				value={props.cv.contactInfo.emailAddress}
+				value={state.emailAddress}
 			/>
 		</section>
 	);

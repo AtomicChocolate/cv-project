@@ -1,80 +1,40 @@
 import React, { FunctionComponent, useState } from "react";
-import { CV, ContactInfoType } from "../utils/CV";
+import { CV, emptyCV, PersonalType } from "../utils/CV";
 
-interface ContactInfoProps {
+interface PersonalProps {
 	cv: CV;
 	updateCV: (newCV: CV) => void;
 }
 
-const ContactInfo: FunctionComponent<ContactInfoProps> = (
-	props: ContactInfoProps
-) => {
+const Personal: FunctionComponent<PersonalProps> = (props: PersonalProps) => {
 	const [state, setState] = useState({
-		firstName: "",
-		lastName: "",
-		profession: "",
-		location: "",
-		phoneNumber: "",
-		emailAddress: "",
+		skills: "",
+		interests: "",
 	});
 
-	function handleChange(newState: ContactInfoType): void {
+	function handleChange(newState: PersonalType): void {
 		setState(newState);
 
 		let newCV = Object.assign({}, props.cv) as CV;
-		newCV.contactInfo = newState;
+		newCV.personal = newState;
 		props.updateCV(newCV);
 	}
 
-	function handleFirstChange(event: React.FormEvent<HTMLInputElement>): void {
+	function handleSkillsChange(event: React.FormEvent<HTMLInputElement>): void {
 		const { value } = event.currentTarget;
 
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.firstName = value;
+		let newState = Object.assign({}, state) as PersonalType;
+		newState.skills = value;
 		handleChange(newState);
 	}
 
-	function handleLastChange(event: React.FormEvent<HTMLInputElement>): void {
-		const { value } = event.currentTarget;
-
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.lastName = value;
-		handleChange(newState);
-	}
-
-	function handleProfessionChange(
+	function handleInterestsChange(
 		event: React.FormEvent<HTMLInputElement>
 	): void {
 		const { value } = event.currentTarget;
 
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.profession = value;
-		handleChange(newState);
-	}
-
-	function handleLocationChange(
-		event: React.FormEvent<HTMLInputElement>
-	): void {
-		const { value } = event.currentTarget;
-
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.location = value;
-		handleChange(newState);
-	}
-
-	function handlePhoneChange(event: React.FormEvent<HTMLInputElement>): void {
-		const { value } = event.currentTarget;
-
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.phoneNumber = value;
-		handleChange(newState);
-	}
-
-	function handleEmailChange(event: React.FormEvent<HTMLInputElement>): void {
-		const { value } = event.currentTarget;
-
-		let newState = Object.assign({}, state) as ContactInfoType;
-		newState.emailAddress = value;
+		let newState = Object.assign({}, state) as PersonalType;
+		newState.interests = value;
 		handleChange(newState);
 	}
 
@@ -82,48 +42,20 @@ const ContactInfo: FunctionComponent<ContactInfoProps> = (
 		<section>
 			<input
 				type="text"
-				name="firstName"
-				onChange={handleFirstChange}
-				placeholder="First name"
-				value={state.firstName}
+				name="skills"
+				onChange={handleSkillsChange}
+				placeholder={emptyCV.personal.skills}
+				value={state.skills}
 			/>
 			<input
 				type="text"
-				name="lastName"
-				onChange={handleLastChange}
-				placeholder="Last name"
-				value={props.cv.contactInfo.lastName}
-			/>
-			<input
-				type="text"
-				name="profession"
-				onChange={handleProfessionChange}
-				placeholder="Profession"
-				value={props.cv.contactInfo.profession}
-			/>
-			<input
-				type="text"
-				name="location"
-				onChange={handleLocationChange}
-				placeholder="Location"
-				value={props.cv.contactInfo.location}
-			/>
-			<input
-				type="text"
-				name="phoneNumber"
-				onChange={handlePhoneChange}
-				placeholder="Phone number"
-				value={props.cv.contactInfo.phoneNumber}
-			/>
-			<input
-				type="text"
-				name="emailAddress"
-				onChange={handleEmailChange}
-				placeholder="Email address"
-				value={props.cv.contactInfo.emailAddress}
+				name="interests"
+				onChange={handleInterestsChange}
+				placeholder={emptyCV.personal.interests}
+				value={state.interests}
 			/>
 		</section>
 	);
 };
 
-export default ContactInfo;
+export default Personal;

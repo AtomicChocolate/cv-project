@@ -7,16 +7,19 @@ interface ContactInfoType {
 	emailAddress: string;
 }
 
-interface ExperienceEntry {
+interface ExperienceEntryType {
+	[key: string]: string | Date;
 	companyName: string;
 	startDate: Date;
 	endDate: Date;
 	title: string;
 	location: string;
-	description: string[];
+	description1: string;
+	description2: string;
+	description3: string;
 }
-interface ExperienceType {
-	experience: ExperienceEntry[];
+interface JobHistoryType {
+	experience: ExperienceEntryType[];
 }
 interface EducationType {
 	universityName: string;
@@ -34,7 +37,7 @@ interface PersonalType {
 
 interface CV {
 	contactInfo: ContactInfoType;
-	jobHistory: ExperienceType;
+	jobHistory: JobHistoryType;
 	education: EducationType;
 	personal: PersonalType;
 }
@@ -56,11 +59,12 @@ const emptyCV: CV = {
 				endDate: new Date(),
 				title: "Senior V.P.",
 				location: "Toontown",
-				description: [
+				description1:
 					"C.O.G.S. Incorporated is a business that does business things.",
+				description2:
 					"As Senior Vice President of Sales, I oversee our marketing, fundraising, and product outreach.",
+				description3:
 					"Tens of thousands of cogs have been promoted under my management, helping expand the business considerably.",
-				],
 			},
 			{
 				companyName: "Company Name",
@@ -68,11 +72,9 @@ const emptyCV: CV = {
 				endDate: new Date(),
 				title: "Job Title",
 				location: "City, ST",
-				description: [
-					"Core responsibility #1.",
-					"Core responsibility #2.",
-					"Core responsibility #3.",
-				],
+				description1: "Core responsibility #2.",
+				description2: "Core responsibility #3.",
+				description3: "Core responsibility #1.",
 			},
 		],
 	},
@@ -97,8 +99,8 @@ const emptyCV: CV = {
 export { emptyCV };
 export type {
 	ContactInfoType,
-	ExperienceEntry,
-	ExperienceType,
+	ExperienceEntryType,
+	JobHistoryType,
 	EducationType,
 	PersonalType,
 	CV,

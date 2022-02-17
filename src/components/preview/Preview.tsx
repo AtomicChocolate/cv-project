@@ -33,11 +33,15 @@ const Preview: FunctionComponent<PreviewProps> = (props: PreviewProps) => {
 						<p className="location-preview">{experienceEntry.location}</p>
 
 						<ul>
-							{experienceEntry.description.map((descriptionEntry) => (
-								<li key={uniqid()} className="jobdescription-preview">
-									{descriptionEntry}
-								</li>
-							))}
+							<li className="jobdescription-preview">
+								{experienceEntry.description1}
+							</li>
+							<li className="jobdescription-preview">
+								{experienceEntry.description2}
+							</li>
+							<li className="jobdescription-preview">
+								{experienceEntry.description3}
+							</li>
 						</ul>
 					</section>
 				))}
