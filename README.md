@@ -8,7 +8,7 @@ This project was done to help me learn React and TypeScript, as I have done very
 
 This website has responsive design, so for smaller screen sizes the website is still easy to read and interact with. The website will also change colors based on your device's dark mode setting.
 
-## [Live Demo](https://atomicchocolate.github.io/cv-application/)
+## [Live Demo](https://atomicchocolate.github.io/cv-project/)
 
 ### Made with
 

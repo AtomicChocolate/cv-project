@@ -9,6 +9,7 @@ interface ContactInfoType {
 
 interface ExperienceEntryType {
 	[key: string]: string | Date;
+	entryId: string;
 	companyName: string;
 	startDate: Date;
 	endDate: Date;
